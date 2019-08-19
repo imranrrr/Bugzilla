@@ -17,7 +17,7 @@
 
       <div class="form-group">
         <%= f.label :user_type %><br />
-        <%= select_tag :user_type, options_for_select(User.user_types.map {|k, v| [k.humanize.capitalize, v]}), class: 'form-control' %>
+        <%= f.select :user_type, options_for_select(User.user_types.map {|k, v| [k.humanize.capitalize, k.humanize.downcase]}), {}, {class: "form-control"} %>
 
       </div>
 

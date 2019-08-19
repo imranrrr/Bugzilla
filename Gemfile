@@ -14,6 +14,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'devise'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap', '~> 4.3.1'
+gem "cancancan"
 
 
 # Use Uglifier as compressor for JavaScript assets

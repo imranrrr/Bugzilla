@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  enum user_type: [:manager, :develloper, :qa]
 
   has_many :project_histories
   has_many :projects, through: :project_histories
@@ -11,4 +10,10 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  enum user_type: {
+    manager: 0,
+    developer: 1,
+    qa: 2
+  }
+
 end
