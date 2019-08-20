@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :projects, through: :project_histories
 
   has_many :bug_histories
-  has_many :bug, through: :bug_histories
+  has_many :bugs, through: :bug_histories
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

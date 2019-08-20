@@ -1,5 +1,5 @@
 class BugHistory < ApplicationRecord
 
   belongs_to :user
-  belongs_to :bugs
+  belongs_to :bug
 end

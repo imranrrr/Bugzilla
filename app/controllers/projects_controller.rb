@@ -6,12 +6,12 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.create(project_params)
-
+    ProjectHistory.create(project: @project, user: current_user)
 
   end
 
-  def assign
-    # @history=ProjectHistory
+  def read
+    @project=current_user.projects.all
   end
 
   private
@@ -19,6 +19,8 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:title, :description)
   end
+
+
 
 
 end

@@ -5,8 +5,26 @@ class Ability
 
   def initialize(user)
 
-    if user.user_type <=> "manager"
+    if user.user_type == "manager"
 
+        can :create, Project
+        can :assign, ProjectHistory
+        can :read, ProjectHistory
+        can :read, Project
+
+    elsif user.user_type == "qa"
+
+        can :create, Bug
+        can :assign, BugHistory
+        can :read, BugHistory
+        can :read, Bug
+    else
+
+        can :assign_developer, ProjectHistory
+        can :assign_developer, BugHistory
+
+
+    end
 
     # Define abilities for the passed in user here. For example:
     #
